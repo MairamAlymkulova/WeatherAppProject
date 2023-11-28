@@ -6,14 +6,15 @@
 //
 import Foundation
 class WeatherManager{
-    func getCurrentWeather(city: String,completion: @escaping (ResponseBody?) -> Void) {
+    static var shared = WeatherManager()
+    func getCurrentWeather(city: String, conclution: @escaping (ResponseBody?) -> Void) {
         let request = URLRequest(url: URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\("36d8df8644548330f78fa1c06a631bfc")&units=metric")!)
         
         var result: ResponseBody?
         let task = URLSession.shared.dataTask(with: request){data, response, error in
             if let data {
                 result = try? JSONDecoder().decode(ResponseBody.self, from: data)
-                completion(result)
+                conclution(result)
             }
             
         }
@@ -52,7 +53,7 @@ struct Coord: Codable {
 struct Main: Codable {
     let temp, feelsLike, tempMin, tempMax: Double
     let pressure, humidity: Int
-
+    
     enum CodingKeys: String, CodingKey {
         case temp
         case feelsLike = "feels_like"

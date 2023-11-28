@@ -15,7 +15,7 @@ struct SignUpView: View {
     @State var confirmPassword = ""
     @Binding var showSignUP: Bool
     var body: some View {
-
+        
         
         VStack{
             Text("Sign Up")

@@ -24,7 +24,7 @@ struct WeatherInfo: View {
                         Text("\(Int(weather.main.temp))°")
                             .font(.system(size: 45, weight: .semibold))
                         Spacer()
-
+                        
                         VStack(alignment: .trailing){
                             
                             Text("\(weather.weather[0].main)")
@@ -34,7 +34,7 @@ struct WeatherInfo: View {
                             Text("Feels like \(Int(weather.main.feelsLike))°")
                                 .font(.system(size: 20, weight: .semibold))
                         }
-
+                        
                     }
                     
                     HStack(spacing: 20){

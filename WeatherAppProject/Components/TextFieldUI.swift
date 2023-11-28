@@ -28,7 +28,7 @@ struct TextFieldUI: View {
                     .font(.system(size: 25))
                     .foregroundColor(.black)
                     .padding(.top, 5)
-          
+                
             }
             Divider()
         }

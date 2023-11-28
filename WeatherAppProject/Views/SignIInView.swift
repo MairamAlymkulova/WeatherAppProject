@@ -13,9 +13,9 @@ struct SignInView: View {
     @State var email = ""
     @State var password = ""
     @Binding var isLogedIn: Bool
-
+    
     var body: some View {
-
+        
         
         VStack{
             Text("Sign In")
@@ -47,7 +47,7 @@ struct SignInView: View {
                     withEmail: email,
                     password: password
                 ) { authResult, error in
-                  // ...
+                    // ...
                     if let authResult{
                         isLogedIn = true
                     }else{

@@ -14,11 +14,10 @@ struct ContentView: View {
             if isLogedIn {
                 WeatherView(logedIn: $isLogedIn)
                     .transition(MoveTransition(edge: .leading))
-
+                
             }else{
                 AuthView(isLogedIn: $isLogedIn)
                     .transition(MoveTransition(edge: .leading))
-
             }
         }
     }
