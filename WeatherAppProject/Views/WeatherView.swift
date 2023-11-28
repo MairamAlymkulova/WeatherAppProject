@@ -10,8 +10,7 @@ import SwiftUI
 
 struct WeatherView: View {
     
-    @State private var weather: ResponseBody? = nil
-    private let manager = WeatherManager.shared
+    @State private var weather: ResponseBody?
     @State private var city: String = ""
     @Binding var logedIn: Bool
     
@@ -30,7 +29,7 @@ struct WeatherView: View {
                         .padding()
                     
                     Button(action: {
-                        manager.getCurrentWeather(city: city) { weatherData in
+                        WeatherManager.shared.getCurrentWeather(city: city) { weatherData in
                             if let weatherData = weatherData {
                                 self.weather = weatherData
                             } else {
